@@ -9,11 +9,11 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item {{ Route::current()->getName()=="home"?"active":"" }}"><a href="{{ route('home') }}" class="nav-link">@lang("info.menu.home")</a></li>
           <li class="nav-item {{ Route::current()->getName()=="about"?"active":"" }}"><a href="{{ route('about') }}" class="nav-link">@lang("info.menu.about")</a></li>
-          <li class="nav-item {{ Route::current()->getName()=="service"?"active":"" }}"><a href="{{ route('service') }}" class="nav-link">@lang("info.menu.service")</a></li>
+          <li class="nav-item {{ Route::current()->getName()=="service"||Route::current()->getName()=="detailService"?"active":"" }}"><a href="{{ route('service') }}" class="nav-link">@lang("info.menu.service")</a></li>
           {{-- <li class="nav-item"><a href="practice-areas.html" class="nav-link">P</a></li> --}}
-          <li class="nav-item {{ Route::current()->getName()=="blog"?"active":"" }}"><a href="{{ route('blog') }}" class="nav-link">@lang("info.menu.blog")</a></li>
+          <li class="nav-item {{ Route::current()->getName()=="blog"||Route::current()->getName()=="detailblog"?"active":"" }}"><a href="{{ route('blog') }}" class="nav-link">@lang("info.menu.blog")</a></li>
           <li class="nav-item {{ Route::current()->getName()=="contact"?"active":"" }}"><a href="{{ route('contact') }}" class="nav-link">@lang("info.menu.contact")</a></li>
-          <li class="nav-item  cta"><a href="{{ route('blog') }}" class="nav-link">@lang("info.menu.consultation")</a></li>
+          <li class="nav-item  cta"><a href="{{ route('contact') }}" class="nav-link">@lang("info.menu.consultation")</a></li>
         </ul>
       </div>
     </div>

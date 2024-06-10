@@ -31,5 +31,10 @@ class Controller extends BaseController
             return response()->json(['reponse' => false, 'msg' => "Erreur d'enregistrement."]);
         }
     }
+    public function show($slog)
+    {
+
+        return view("pages.detailservice",['slug' => $slog]);
+    }
 
 }

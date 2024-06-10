@@ -30,3 +30,4 @@ Route::get('/blog', function () {
     return view('pages.blog');
 })->name("blog");
 Route::post('/sendMessage', [Controller::class, 'sendMessage'])->name('sendMessage');
+Route::get('detailService/{slog}', [Controller::class, 'show'])->name('detailService');

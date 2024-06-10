@@ -16,7 +16,7 @@
                 {{--
                 <!-- <h1 class="mb-4">Attorneys Fighting For Your Freedom</h1> --> --}}
                 <p class="mb-4"> @lang("info.content.mission") </p>
-                <p><a href="#" class="btn btn-primary mr-md-4 py-2 px-4">Obtenez des conseils juridiques <span
+                <p><a href="{{ route('contact') }}" class="btn btn-primary mr-md-4 py-2 px-4">Obtenez des conseils juridiques <span
                             class="ion-ios-arrow-forward"></span></a></p>
             </div>
         </div>
@@ -28,11 +28,11 @@
         <div class="row">
             <div class="col-lg-3 py-5">
                 <div class="heading-section ftco-animate">
-                    <span class="subheading">Services</span>
-                    <h2 class="mb-4">Why Select Us?</h2>
-                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It
-                        is a paradisematic country, in which roasted parts of sentences fly into your.</p>
-                    <p><a href="#" class="btn btn-primary py-3 px-4">Free Consultation</a></p>
+                    <span class="subheading">Nos Services</span>
+                    <h2 class="mb-4">Pourquoi nous choisir?</h2>
+                    <p>Nous fournissons des solutions juridiques hautement fiables et efficaces.</p>
+                    <p>Pour trouver la bonne solution à vos problèmes juridiques, vous avez besoin de professionnels du droit ayant les compétences, l’intégrité et l’expérience nécessaires.</p>
+                    <p><a href="{{ route('contact') }}" class="btn btn-primary py-3 px-4">Obtenez des conseils juridiques</a></p>
                 </div>
             </div>
             <div class="col-lg-9 services-wrap px-4 pt-5">
@@ -43,11 +43,10 @@
                                 <span class="flaticon-lawyer"></span>
                             </div>
                             <div class="text">
-                                <h3>Fight for Justice</h3>
-                                <p>Seeking justice in the world is a sed significant emotional and investment when we
-                                    follow this call.</p>
+                                <h3>@lang("info.services.droit.nom")</h3>
+                                <p>{{ Str::limit(__("info.services.droit.resume"), 100, '...') }}</p>
                             </div>
-                            <a href="#" class="btn-custom d-flex align-items-center justify-content-center"><span
+                            <a href="{{ route('detailService',['slog'=>str_replace(' ', '-', __("info.services.droit.nom"))]) }}" class="btn-custom d-flex align-items-center justify-content-center"><span
                                     class="ion-ios-arrow-round-forward"></span></a>
                         </div>
                     </div>
@@ -57,11 +56,10 @@
                                 <span class="flaticon-lawyer"></span>
                             </div>
                             <div class="text">
-                                <h3>Best Case Strategy</h3>
-                                <p>Seeking justice in the world is a sed significant emotional and investment when we
-                                    follow this call.</p>
+                                <h3>@lang("info.services.banc.nom")</h3>
+                                <p>{{ Str::limit(__("info.services.banc.resume"), 100, '...') }}</p>
                             </div>
-                            <a href="#" class="btn-custom d-flex align-items-center justify-content-center"><span
+                            <a href="{{ route('detailService',['slog'=>str_replace(' ', '-', __("info.services.banc.nom"))]) }}" class="btn-custom d-flex align-items-center justify-content-center"><span
                                     class="ion-ios-arrow-round-forward"></span></a>
                         </div>
                     </div>
@@ -71,11 +69,10 @@
                                 <span class="flaticon-lawyer"></span>
                             </div>
                             <div class="text">
-                                <h3>Experienced Attorney</h3>
-                                <p>Seeking justice in the world is a sed significant emotional and investment when we
-                                    follow this call.</p>
+                                <h3>@lang("info.services.droitf.nom")</h3>
+                                <p>{{ Str::limit(__("info.services.droitf.resume"), 100, '...') }}</p>
                             </div>
-                            <a href="#" class="btn-custom d-flex align-items-center justify-content-center"><span
+                            <a href="{{ route('detailService',['slog'=>str_replace(' ', '-', __("info.services.droitf.nom"))]) }}" class="btn-custom d-flex align-items-center justify-content-center"><span
                                     class="ion-ios-arrow-round-forward"></span></a>
                         </div>
                     </div>
@@ -91,8 +88,8 @@
     <div class="container">
         <div class="row justify-content-center mb-5">
             <div class="col-md-10 text-center heading-section ftco-animate">
-                <span class="subheading">Explore Case Studies</span>
-                <h2 class="mb-4">1000+ Completed Cases Successfully</h2>
+                <span class="subheading">Analyser les cas d'étude</span>
+                <h2 class="mb-4">1000+ Cas terminés avec succès</h2>
             </div>
         </div>
         <div class="row">
@@ -137,7 +134,7 @@
                 </div>
             </div>
             <div class="col-md-12 text-center mt-4">
-                <a href="case.html" class="btn btn-primary px-5">See All Successful Cases</a>
+                <a href="case.html" class="btn btn-primary px-5">Voir tous les cas réussis</a>
             </div>
         </div>
     </div>
@@ -147,116 +144,13 @@
     <div class="container-fluid px-md-5">
         <div class="row justify-content-center mb-5 pb-3">
             <div class="col-md-7 text-center heading-section ftco-animate">
-                <span class="subheading">Our Attorney</span>
-                <h2 class="mb-4">Our Legal Attorneys</h2>
+                <span class="subheading">Notre Equipe</span>
+                <h2 class="mb-4">Nos avocats</h2>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-3 col-sm-6">
-                <div class="block-2 ftco-animate">
-                    <div class="flipper">
-                        <div class="front" style="background-image: url(assets/images/person_1.jpg);">
-                            <div class="box">
-                                <h2>Ryan Anderson</h2>
-                                <p>Civil Lawyer</p>
-                            </div>
-                        </div>
-                        <div class="back">
-                            <!-- back content -->
-                            <blockquote>
-                                <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an
-                                    almost unorthographic life One day however a small line of blind text &rdquo;</p>
-                            </blockquote>
-                            <div class="author d-flex">
-                                <div class="image align-self-center">
-                                    <img src="assets/images/person_1.jpg" alt="">
-                                </div>
-                                <div class="name align-self-center ml-3">Ryan Anderson <span class="position">Civil
-                                        Lawyer</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="block-2 ftco-animate">
-                    <div class="flipper">
-                        <div class="front" style="background-image: url(assets/images/person_2.jpg);">
-                            <div class="box">
-                                <h2>Greg Washer</h2>
-                                <p>Business Lawyer</p>
-                            </div>
-                        </div>
-                        <div class="back">
-                            <!-- back content -->
-                            <blockquote>
-                                <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an
-                                    almost unorthographic life One day however a small line of blind text &rdquo;</p>
-                            </blockquote>
-                            <div class="author d-flex">
-                                <div class="image align-self-center">
-                                    <img src="assets/images/person_2.jpg" alt="">
-                                </div>
-                                <div class="name align-self-center ml-3">Greg Washer<span class="position">Business
-                                        Lawyer</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="block-2 ftco-animate">
-                    <div class="flipper">
-                        <div class="front" style="background-image: url(assets/images/person_3.jpg);">
-                            <div class="box">
-                                <h2>Tony Henderson</h2>
-                                <p>Criminal Defense</p>
-                            </div>
-                        </div>
-                        <div class="back">
-                            <!-- back content -->
-                            <blockquote>
-                                <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an
-                                    almost unorthographic life One day however a small line of blind text &rdquo;</p>
-                            </blockquote>
-                            <div class="author d-flex">
-                                <div class="image align-self-center">
-                                    <img src="assets/images/person_3.jpg" alt="">
-                                </div>
-                                <div class="name align-self-center ml-3">Tony Henderson <span class="position">Criminal
-                                        Defense</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="block-2 ftco-animate">
-                    <div class="flipper">
-                        <div class="front" style="background-image: url(assets/images/person_4.jpg);">
-                            <div class="box">
-                                <h2>Jack Smith</h2>
-                                <p>Insurance Lawyer</p>
-                            </div>
-                        </div>
-                        <div class="back">
-                            <!-- back content -->
-                            <blockquote>
-                                <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an
-                                    almost unorthographic life One day however a small line of blind text &rdquo;</p>
-                            </blockquote>
-                            <div class="author d-flex">
-                                <div class="image align-self-center">
-                                    <img src="assetsimages/person_4.jpg" alt="">
-                                </div>
-                                <div class="name align-self-center ml-3">Jack Smith <span class="position">Insurance
-                                        Lawyer</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @include("parties.team")
+    </div>
     </div>
 </section>
 

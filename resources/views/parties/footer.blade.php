@@ -37,10 +37,10 @@
           <div class="ftco-footer-widget mb-4 ml-md-5">
             <h2 class="ftco-heading-2">Domaines d'intervention</h2>
             <ul class="list-unstyled">
-              <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>@lang("info.services.droit")</a></li>
-              <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>@lang("info.services.banc")</a></li>
-              <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>@lang("info.services.droitf")</a></li>
-              <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>@lang("info.services.droittr")</a></li>
+              <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>@lang("info.services.droit.nom")</a></li>
+              <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>@lang("info.services.banc.nom")</a></li>
+              <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>@lang("info.services.droitf.nom")</a></li>
+              <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>@lang("info.services.droittr.nom")</a></li>
             </ul>
           </div>
         </div>
