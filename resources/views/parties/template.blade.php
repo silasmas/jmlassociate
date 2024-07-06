@@ -138,7 +138,7 @@
                     <div class="col-sm-6 col-md-4">
                         <div class="f-first-content f-all-h2">
                             <div class="f-content-img">
-                                <a href="#"><img src="{{ asset('assets/images/jml3.png') }}" alt="f-image"></a>
+                                <a href="#"><img width="100" height="100" src="{{ asset('assets/images/jml2.png') }}" alt="f-image"></a>
                             </div>
                             <p>Trust is a business theme perfectly suited legal advisers and offices, lawyers,
                                 attorneys, counsels, advocates and other legal and law related services.Trust started as
