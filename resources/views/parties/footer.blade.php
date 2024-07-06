@@ -1,86 +1,137 @@
-{{-- <section class="ftco-section ftco-no-pt ftco-no-pb bg-light">
-    <div class="container">
-      <div class="row d-flex justify-content-end">
-          <div class="col-md-9 py-4 px-md-4 bg-primary">
-              <div class="row">
-                <div class="col-md-6 ftco-animate d-flex align-items-center">
-                  <h2 class="mb-0" style="color:white; font-size: 24px;">Abonnez-vous à notre newsletter</h2>
-                </div>
-                <div class="col-md-6 d-flex align-items-center">
-                  <form action="#" class="subscribe-form">
-                    <div class="form-group d-flex">
-                      <input type="text" class="form-control" placeholder="Entrer votre email">
-                      <input type="submit" value="S'abonner" class="submit px-3">
-                    </div>
-                  </form>
-                </div>
-            </div>
-        </div>
-      </div>
-    </div>
-  </section> --}}
-<footer class="ftco-footer ftco-bg-dark ftco-section">
-    <div class="container">
-      <div class="row mb-5">
-        <div class="col-md">
-          <div class="ftco-footer-widget mb-4">
-            <h2 class="logo"><a href="{{ route('home') }}"> {{ config('app.name') }}<span>Cabinet d'avocats</span></a></h2>
-            <p>{{ Str::limit(__("info.content.mission"), 100, '...') }}</p>
-            <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-              {{-- <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li> --}}
-              <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-              <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-            </ul>
+<footer>
+    <div class="pb-5 container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-lg-3 col-md-6">
+          <div class="text-star">
+            <a href="#" class="logo">
+              <img src="{{ asset('assets/images/PLA_logo1.png') }}" alt="">
+            </a>
+            <p>
+                @if (!empty($accueil->txtfooter))
+                    {!! $accueil->txtfooter !!}
+                 @endif
+            </p>
+            @if (!empty($accueil->facebook))
+            <a href="{{ $accueil->facebook }}" class="icon">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            @endif
+            @if (!empty($accueil->tweeter))
+            <a href="{{ $accueil->tweeter }}" class="icon">
+              <i class="fab fa-twitter"></i>
+            </a>
+            @endif
+            @if (!empty($accueil->linkedin))
+            <a href="{{ $accueil->linkedin }}" class="icon">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            @endif
+            @if (!empty($accueil->google))
+            <a href="{{ $accueil->google }}" class="icon">
+              <i class="fab fa-google-plus"></i>
+            </a>
+            @endif
           </div>
         </div>
-        <div class="col-md">
-          <div class="ftco-footer-widget mb-4 ml-md-5">
-            <h2 class="ftco-heading-2">Domaines d'intervention</h2>
-            <ul class="list-unstyled">
-              <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>@lang("info.services.droit.nom")</a></li>
-              <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>@lang("info.services.banc.nom")</a></li>
-              <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>@lang("info.services.droitf.nom")</a></li>
-              <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>@lang("info.services.droittr.nom")</a></li>
-            </ul>
+        <div class="col-lg-6 col-md-6 text-center">
+          <div class="text-white text-star">
+            <h4>@lang('info.footer.contact')</h4>
+            @if (!empty($accueil->adresse))
+            <p>
+              <i class="fas fa-map-marker"></i>
+              {{ $accueil->adresse }}
+            </p>
+            @endif
+            @if (!empty($accueil->email))
+            <p>
+              <i class="fas fa-envelope"></i>
+              {{ $accueil->email }}
+            </p>
+            @endif
+            @if (!empty($accueil->telphone))
+            <p>
+              <i class="fas fa-phone"></i>
+              {{ $accueil->telphone }}
+            </p>
+            @endif
           </div>
         </div>
-        <div class="col-md">
-          <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Coordonnées</h2>
-              <div class="block-23 mb-3">
-                <ul>
-                  <li><span class="icon icon-map-marker"></span><span class="text">@lang("info.contact.adresse")</span></li>
-                  <li><a href="#"><span class="icon icon-phone"></span><span class="text">@lang("info.contact.phone")</span></a></li>
-                  <li><a href="#"><span class="icon icon-envelope"></span><span class="text">@lang("info.contact.email")</span></a></li>
-                </ul>
-              </div>
-          </div>
-        </div>
-        {{-- <div class="col-md">
-           <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2">Heures de travail</h2>
-            <div class="opening-hours">
-                <h4>Jours ouvrable:</h4>
-                <p class="pl-3">
-                    <span>Monday – Friday : 9am to 20 pm</span>
-                    <span>Saturday : 9am to 17 pm</span>
-                </p>
-                <h4>Vacations:</h4>
-                <p class="pl-3">
-                    <span>All Sunday Days</span>
-                    <span>All Official Holidays</span>
-                </p>
-            </div>
-          </div>
-        </div> --}}
-      </div>
-      <div class="row">
-        <div class="col-md-12 text-center">
+        <div class="mr-5 col-lg-3 col-md-6">
+          <div class="text-white text-star">
+            <h4>@lang('info.footer.menu')</h4>
+            <div class="row g-lg-3 g-3">
+                @if(!empty($accueil->p1))
+                <div class="col-lg-4 col-6">
+                    <div class="card">
+                      <a href="{{ $accueil->l1 }}" target="_blank" rel="">
+                       <img src="{{ asset('storage/'. $accueil->p1) }}" alt="">
+                      </a>
 
-          <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> {{ config('app.name') }} | Designed <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://silasmas.com" target="_blank">Sdev</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    </div>
+                </div>
+                @endif
+                @if(!empty($accueil->p2))
+                <div class="col-lg-4 col-6">
+                    <div class="card">
+                      <a href="{{ $accueil->l2 }}" target="_blank" rel="">
+                       <img src="{{ asset('storage/'. $accueil->p2) }}" alt="">
+                      </a>
+
+                    </div>
+                  </div>
+                @endif
+                @if(!empty($accueil->p3))
+                <div class="col-lg-4 col-6">
+                    <div class="card">
+                      <a href="{{ $accueil->l3 }}" target="_blank" rel="">
+                      <img src="{{ asset('storage/'. $accueil->p3) }}" alt="">
+                      </a>
+
+                    </div>
+                  </div>
+                @endif
+                @if(!empty($accueil->p4))
+                <div class="col-lg-4 col-6">
+                    <div class="card">
+                      <a href="{{ $accueil->l4}}" target="_blank" rel="">
+                        <img src="{{ asset('storage/'. $accueil->p4) }}" alt="">
+                      </a>
+
+                    </div>
+                  </div>
+                @endif
+
+            </div>
+          </div>
         </div>
-      </div>
+        {{-- <div class="col-lg-3 col-md-6">
+          <div class="text-white text-star">
+            <h4>NewsLetter</h4>
+            <p>@lang('info.footer.msgNewsletter')</p>
+            <div class="col-lg-12">
+            </div>
+            <div class="col-lg-10">
+            </div>
+            <form action="" id="formnewsletter" data-parsley-validate>
+                @csrf
+              <div class="form-group row g-3">
+                <div class="col-lg-12">
+                  <input type="email" name='emailnewsletter' class="form-control" placeholder="Veuillez inserez votre Email...."
+                  required aria-required="true" data-parsley-minlength="2">
+                </div>
+                <div class="col-lg-12">
+                  <button class="btn" id="btNewsletter">@lang('info.footer.btnSouscription') <i class="fas fa-paper-plane ps-1"></i></button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div> --}}
     </div>
   </footer>
+  <div class="bottombar">
+    <div class="text-center">
+      <p class="mb-0" style="opacity: .5;">Copyright © Pathy Liongo & Associates 2021</p>
+      <p class="mb-0" style="font-size: 14px;"><small>Designed By <a href="https://www.silasmas.com" target="_blank">SilasDev</a></small></p>
+    </div>
+  </div>
