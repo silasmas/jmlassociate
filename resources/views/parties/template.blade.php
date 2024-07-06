@@ -138,7 +138,7 @@
                     <div class="col-sm-6 col-md-4">
                         <div class="f-first-content f-all-h2">
                             <div class="f-content-img">
-                                <a href="#"><img src="{{ asset('assets/images/fotter-horse.png') }}" alt="f-image"></a>
+                                <a href="#"><img src="{{ asset('assets/images/jml3.png') }}" alt="f-image"></a>
                             </div>
                             <p>Trust is a business theme perfectly suited legal advisers and offices, lawyers,
                                 attorneys, counsels, advocates and other legal and law related services.Trust started as
@@ -192,7 +192,7 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="footer-bottom clearfix">
+                <div class="clearfix footer-bottom">
                     <div class="col-md-6 col-sm-6 no-padding-left">
                         <div class="f-bottom-left-text">
                             <p>Trust © All Rights Reserved. With Love by <span><a href="#">7oroof.com</a></span> </p>

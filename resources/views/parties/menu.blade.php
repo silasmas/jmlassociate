@@ -2,8 +2,9 @@
     <div class="container custom-header">
         <div class="row">
             <div id="menuzord" class="menuzord">
-                <a href="{{ route('home') }}" class="menuzord-brand"><img src="{{ asset('assets/images/horse.png') }}"
-                        width="35" height="51" alt="">Trust <span>We provide legal solutions <br>for you !</span></a>
+                <a href="{{ route('home') }}" class="menuzord-brand">
+                    <img src="{{ asset('assets/images/jml1.png') }}"
+                        width="150" height="70" alt=""><span>We provide legal solutions <br>for you !</span></a>
                 <div class="header-contact">
                     <ul>
                         <li><span>Phone :</span>@lang("info.contact.phone")</li>
@@ -38,7 +39,7 @@
                             <div class="megamenu-row">
                                 <div class="mega-item col6">
                                     <ul>
-                                        <h3 class="text-white mt-5" style="color: #fff;padding-top: 6px">
+                                        <h3 class="mt-5 text-white" style="color: #fff;padding-top: 6px">
                                         <b>
                                             @lang('info.expertises.menu')
                                         </b>

@@ -4,7 +4,7 @@
         <div class="col-lg-3 col-md-6">
           <div class="text-star">
             <a href="#" class="logo">
-              <img src="{{ asset('assets/images/PLA_logo1.png') }}" alt="">
+              <img src="{{ asset('assets/images/jml2.png') }}" alt="">
             </a>
             <p>
                 @if (!empty($accueil->txtfooter))
@@ -33,7 +33,7 @@
             @endif
           </div>
         </div>
-        <div class="col-lg-6 col-md-6 text-center">
+        <div class="text-center col-lg-6 col-md-6">
           <div class="text-white text-star">
             <h4>@lang('info.footer.contact')</h4>
             @if (!empty($accueil->adresse))
