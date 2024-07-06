@@ -143,7 +143,6 @@
                             <p>Trust is a business theme perfectly suited legal advisers and offices, lawyers,
                                 attorneys, counsels, advocates and other legal and law related services.Trust started as
                                 a sole practitioner providing services to the area community.</p>
-                            <p><a href="#">Buy This Theme <i class="fa fa-long-arrow-right"></i></a></p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-3">
@@ -195,7 +194,7 @@
                 <div class="clearfix footer-bottom">
                     <div class="col-md-6 col-sm-6 no-padding-left">
                         <div class="f-bottom-left-text">
-                            <p>Trust © All Rights Reserved. With Love by <span><a href="#">7oroof.com</a></span> </p>
+                            <p>JML © All Rights Reserved. Design by <span><a target="blank" href="silasmas.com">SDev</a></span> </p>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-6 no-padding-right">
