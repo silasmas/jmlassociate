@@ -3,8 +3,9 @@
         <div class="row">
             <div id="menuzord" class="menuzord">
                 <a href="{{ route('home') }}" class="menuzord-brand">
-                    <img src="{{ asset('assets/images/jml1.png') }}"
-                        width="150" height="70" alt=""><span>We provide legal solutions <br>for you !</span></a>
+                    <img src="{{ asset('assets/images/jml1.png') }}" width="150" height="70" alt=""><span>We provide legal solutions <br>for you !</span>
+                </a>
+
                 <div class="header-contact">
                     <ul>
                         <li><span>Phone :</span>@lang("info.contact.phone")</li>
@@ -12,6 +13,7 @@
                         <li><a href="#">@lang("info.menu.consultation")</a></li>
                     </ul>
                 </div>
+
                 <div class="header-search">
                     <ul>
                         <li class="add-to-cart"><a href="#"><i class="fa fa-globe"></i></a></li>
@@ -31,10 +33,12 @@
                         </div>
                     </div>
                 </div>
+
                 <ul class="menuzord-menu menuzord-menu-bg">
                     <li class="active"><a href="{{ route('home') }}">@lang("info.menu.home")</a></li>
                     <li><a href="">@lang("info.menu.about")</a></li>
-                    <li><a href="">@lang("info.menu.service")</a>
+                    <li>
+                        <a href="">@lang("info.menu.service")</a>
                         <div class="megamenu megamenu-half-width megamenu-bg">
                             <div class="megamenu-row">
                                 <div class="mega-item col6">
@@ -56,9 +60,9 @@
                                 </div>
                                 <div class="mega-item col6">
                                     <ul><h3 class="text-white" style="color: #fff">
-                                       <b>
+                                    <b>
                                         @lang('info.domaine.menu')
-                                       </b>
+                                    </b>
                                     </h3>
                                         @if (!$domaine->isEmpty())
                                     @forelse ($domaine as $sec)
@@ -90,7 +94,6 @@
                                     <li><a href="{{ route('detailExpertise',['id'=>$sec->id,'p'=>$sec->titre1]) }}">{{
                                             $sec->titre1 }}</a></li>
                                     @empty
-
                                     @endforelse
                                 </ul>
                                 @endif
@@ -102,7 +105,6 @@
                                     <li><a href="{{ route('detailExpertise',['id'=>$sec->id,'p'=>$sec->titre1]) }}">{{
                                             $sec->titre1 }}</a></li>
                                     @empty
-
                                     @endforelse
                                 </ul>
                                 @endif

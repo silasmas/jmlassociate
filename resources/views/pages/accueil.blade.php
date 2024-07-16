@@ -9,7 +9,7 @@
         <ul>
                 <li data-index="rs-6" data-transition="parallaxtoright" data-slotamount="default"  data-easein="default" data-easeout="default" data-masterspeed="default" data-delay="6510"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="{{ asset('assets/images/bg-team.jpg') }}"  alt=""  width="1920" height="1280" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                    <img src="{{ asset('img/slides/slide_1.jpg') }}"  alt=""  width="1920" height="1280" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
                     <!-- LAYERS -->
 
                     <!-- LAYER NR. 1 -->
@@ -29,7 +29,7 @@
                         data-responsive_offset="on"
 
 
-                        style="z-index: 5; white-space: nowrap; font-size: 17px; line-height: 28px; font-weight: 400; color: rgba(241, 241, 241, 1.00);font-family:Lora;"><span class="sl-italic">Your Legal Solution Starts Here !</span>
+                        style="z-index: 5; white-space: nowrap; font-size: 17px; line-height: 28px; font-weight: 400; color: rgba(241, 241, 241, 1.00);font-family: 'Metropolis Light', sans-serif;"><span>Your Legal Solution Starts Here !</span>
                     </div>
 
                     <!-- LAYER NR. 2 -->
@@ -50,7 +50,7 @@
                         data-splitout="none"
                         data-responsive_offset="on"
 
-                        style="z-index: 6; white-space: nowrap; font-size: 50px; line-height: 58px; font-weight: 800; color: rgba(255, 255, 255, 1.00);"><div class="text-center heading-rp-small" style=" text-transform: uppercase;">The Greatest & Strongest Firm<br/>
+                        style="font-family: 'Metropolis SemiBold', sans-serif; z-index: 6; white-space: nowrap; font-size: 50px; line-height: 58px; font-weight: 800; color: rgba(255, 255, 255, 1.00);"><div class="text-center heading-rp-small" style=" text-transform: uppercase;">The Greatest & Strongest Firm<br/>
                         You Can Trust</div>
                     </div>
 
@@ -94,7 +94,7 @@
                 </li>
                 <li data-index="rs-7" data-transition="parallaxtoright" data-slotamount="default"  data-easein="default" data-easeout="default" data-masterspeed="default" data-delay="6500"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="{{ asset('assets/images/header-trans.jpg') }}" alt="" width="1920" height="1022" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                    <img src="{{ asset('img/slides/slide_2.jpg') }}" alt="" width="1920" height="1022" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
                     <!-- LAYERS -->
 
                     <!-- LAYER NR. 1 -->
@@ -113,7 +113,7 @@
                         data-splitout="none"
                         data-responsive_offset="on"
 
-                        style="z-index: 5; white-space: nowrap; font-size: 17px; line-height: 28px; font-weight: 400; color: rgba(229, 228, 228, 1.00);font-family:Lora;"><span class="sl-italic">We Are Here To Help !</span>
+                        style="z-index: 5; white-space: nowrap; font-size: 17px; line-height: 28px; font-weight: 400; color: rgba(229, 228, 228, 1.00);font-family: 'Metropolis Light', sans-serif;"><span>We Are Here To Help !</span>
                     </div>
 
                     <!-- LAYER NR. 2 -->
@@ -136,7 +136,7 @@
                         data-responsive_offset="on"
 
 
-                        style="z-index: 6; white-space: nowrap; font-size: 50px; line-height: 58px; font-weight: 800; color: rgba(255, 255, 255, 1.00);"><div class="text-center heading-rp-small" style=" text-transform: uppercase;">Realize Your Constitutional Rights<br/>
+                        style="font-family: 'Metropolis SemiBold', sans-serif; z-index: 6; white-space: nowrap; font-size: 50px; line-height: 58px; font-weight: 800; color: rgba(255, 255, 255, 1.00);"><div class="text-center heading-rp-small" style=" text-transform: uppercase;">Realize Your Constitutional Rights<br/>
                         With Qualified Help</div>
                     </div>
 
@@ -286,7 +286,7 @@
                 </li>
                 <li data-index="rs-14" data-transition="parallaxtoright" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-delay="6510" data-rotate="0" data-saveperformance="off" data-title="Slider3-Layer1" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="{{ asset('assets/images/page-title-v5.jpg') }}" alt="" width="2000" height="1333" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                    <img src="{{ asset('img/slides/slide_3.jpg') }}" alt="" width="2000" height="1333" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
                     <!-- LAYERS -->
 
                     <!-- LAYER NR. 1 -->
@@ -322,7 +322,7 @@
                         data-responsive_offset="on"
 
 
-                        style="z-index: 6;"><img src="{{ asset('assets/images/slider3_ly1.jpg') }}" alt="" width="32" height="18" data-ww="['32px','32px','32px','32px']" data-hh="['18px','18px','18px','18px']" data-no-retina>
+                        style="font-family: 'Metropolis SemiBold', sans-serif; z-index: 6;"><img src="{{ asset('assets/images/slider3_ly1.jpg') }}" alt="" width="32" height="18" data-ww="['32px','32px','32px','32px']" data-hh="['18px','18px','18px','18px']" data-no-retina>
                     </div>
 
                     <!-- LAYER NR. 3 -->
@@ -380,7 +380,7 @@
                         data-responsive_offset="on"
 
 
-                        style="z-index: 9; white-space: nowrap; font-size: 110px; line-height: 100px; font-weight: 700; color: rgba(255, 255, 255, 1.00);font-family:Lora;">TRUST
+                        style="z-index: 9; margin-top: 30px; white-space: nowrap; font-size: 110px; line-height: 100px; font-weight: 700; color: rgba(255, 255, 255, 1.00);font-family: 'Metropolis SemiBold', sans-serif;">TRUST
                     </div>
 
                     <!-- LAYER NR. 6 -->
@@ -418,7 +418,7 @@
                         data-responsive_offset="on"
 
 
-                        style="z-index: 11; white-space: nowrap; font-size: 17px; line-height: 26px; font-weight: 400; color: rgba(229, 228, 228, 1.00);font-family:Lora;"><div class="text-center hidden-xs" style="font-style: italic;">Trust is a business theme perfectly suited legal advisers and offices, lawyers, attorneys, counsels,<br/> advocates and other legal and law related services.</div>
+                        style="z-index: 11; white-space: nowrap; font-size: 17px; line-height: 26px; font-weight: 400; color: rgba(229, 228, 228, 1.00);font-family: 'Metropolis Light', sans-serif;"><div class="text-center hidden-xs">Trust is a business theme perfectly suited legal advisers and offices, lawyers, attorneys, counsels,<br/> advocates and other legal and law related services.</div>
                     </div>
 
                     <!-- LAYER NR. 8 -->
