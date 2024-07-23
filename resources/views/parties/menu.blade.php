@@ -3,7 +3,8 @@
         <div class="row">
             <div id="menuzord" class="menuzord">
                 <a href="{{ route('home') }}" class="menuzord-brand">
-                    <img src="{{ asset('assets/images/jml1.png') }}" width="150" height="70" alt=""><span>We provide legal solutions <br>for you !</span>
+                    <img src="{{ asset('assets/images/jml1.png') }}" width="150" height="70" alt="">
+                    <span>We provide legal solutions <br>for you !</span>
                 </a>
 
                 <div class="header-contact">
@@ -35,10 +36,10 @@
                 </div>
 
                 <ul class="menuzord-menu menuzord-menu-bg">
-                    <li class="active"><a href="{{ route('home') }}">@lang("info.menu.home")</a></li>
-                    <li><a href="">@lang("info.menu.about")</a></li>
-                    <li>
-                        <a href="">@lang("info.menu.service")</a>
+                    <li class="{{ Route::current()->getName()=="home"?"active":""}}"><a href="{{ route('home') }}">@lang("info.menu.home")</a></li>
+                    <li class="{{ Route::current()->getName()=="about"?"active":""}}"><a href="{{ route('about') }}">@lang("info.menu.about")</a></li>
+                    <li class="{{ Route::current()->getName()=="expertise"?"active":""}}">
+                        <a href="{{ route('expertise') }}">@lang("info.menu.service")</a>
                         <div class="megamenu megamenu-half-width megamenu-bg">
                             <div class="megamenu-row">
                                 <div class="mega-item col6">
@@ -86,33 +87,10 @@
                                 </div> --}}
                             </div>
                         </div>
-                        {{-- <ul class="dropdown ">
-                            <li><a href="">@lang('info.expertises.menu')</a>
-                                @if (!$secteur->isEmpty())
-                                <ul class="dropdown">
-                                    @forelse ($secteur as $sec)
-                                    <li><a href="{{ route('detailExpertise',['id'=>$sec->id,'p'=>$sec->titre1]) }}">{{
-                                            $sec->titre1 }}</a></li>
-                                    @empty
-                                    @endforelse
-                                </ul>
-                                @endif
-                            </li>
-                            <li><a href="">@lang('info.domaine.menu')</a>
-                                @if (!$domaine->isEmpty())
-                                <ul class="dropdown">
-                                    @forelse ($domaine as $sec)
-                                    <li><a href="{{ route('detailExpertise',['id'=>$sec->id,'p'=>$sec->titre1]) }}">{{
-                                            $sec->titre1 }}</a></li>
-                                    @empty
-                                    @endforelse
-                                </ul>
-                                @endif
-                            </li>
-                        </ul> --}}
                     </li>
-                    <li><a href="">@lang("info.menu.team")</a></li>
-                    <li><a href="">@lang("info.menu.contact")</a></li>
+                    <li  class="{{ Route::current()->getName()=="team"?"active":""}}"><a href="{{ route('team') }}">@lang("info.menu.team")</a></li>
+                    <li><a href="{{ route('team') }}">@lang("info.menu.blog")</a></li>
+                    <li><a href="{{ route('team') }}">@lang("info.menu.contact")</a></li>
                 </ul>
             </div>
         </div>

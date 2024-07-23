@@ -6,7 +6,7 @@ jQuery(function($) {
 
             /*
             =========================================================================================
-            1. Spinner 
+            1. Spinner
             =========================================================================================
             */
             $(".outslider_loading").fadeOut("slow");
@@ -17,7 +17,7 @@ jQuery(function($) {
         $(window).on('scroll', function() {
             /*
             =========================================================================================
-            2. NAVBAR 
+            2. NAVBAR
             =========================================================================================
             */
 
@@ -63,7 +63,7 @@ jQuery(function($) {
                 $(".rev_slider_wrapper11").addClass("rev-margin");
             } else {
                 $(".rev_slider_wrapper11").removeClass("rev-margin");
-                $(".rev_slider_wrapper11").css("margin-top","0");                
+                $(".rev_slider_wrapper11").css("margin-top","0");
             }
             if ($(window).scrollTop() > 10) {
                 $(".v15-header").addClass("toogle_logo");
@@ -358,7 +358,7 @@ jQuery(function($) {
         })
         /*
         =========================================================================================
-        10. CONTACT  FORM VALIDATION   
+        10. CONTACT  FORM VALIDATION
         =========================================================================================
         */
 
@@ -428,25 +428,39 @@ jQuery(function($) {
             }
             var subjectValue = $("#Subject").val();
             var messageValue = $("#Message").val();
+            var messageValue = $("#Message").val();
             if (nameValue && emailValue) {
+                var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
                 $(".feedback_box").slideDown();
+                Swal.fire({
+                    title: 'Merci de patienter...',
+                    icon: 'info'
+                })
                 $.ajax({
-                    url: 'mail/mail.php',
-                    data: {
-                        name: nameValue,
-                        email: emailValue,
-                        subject: subjectValue,
-                        message: messageValue
-                    },
+                    url: 'sendMessage',
+                    data: $("#formMessage").serialize(),
                     type: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': csrfToken
+                    },
                     success: function(result) {
                         "use strict";
-                        $(".show_result").append("<div class='result_message'>" + result + "</div>");
-                        $(".result_message").slideDown();
-                        $("#Name").val("");
-                        $("#Email").val("");
-                        $("#Subject").val("");
-                        $("#Message").val("");
+                        if (result.reponse) {
+                            Swal.fire({
+                                title: result.msg,
+                                icon: 'success'
+                            })
+                            // $(".show_result").append("<div class='result_message'>" + result.msg + "</div>");
+                            // $(".result_message").slideDown();
+                            $("#formMessage")[0].reset();
+                        } else {
+                            Swal.fire({
+                                title: result.msg,
+                                icon: 'error'
+                            })
+                            // $(".show_result").append("<div class='error_message'>" + result.msg + "</div>");
+                            // $(".result_message").slideDown();
+                        }
                     }
                 });
             }

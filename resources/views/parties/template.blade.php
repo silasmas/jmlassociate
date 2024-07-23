@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{config('app.name')}} | {{isset($titre)?$titre:""}}</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!-- FAVICON -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/favicon.ico') }}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/favicon.png') }}" />
     <!-- Bootstrap -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }} " rel="stylesheet">
     <!-- FONT AWESOME -->
@@ -33,6 +35,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/jquery-ui.css') }} ">
     <!-- MAIN STYLE -->
     <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/custom/sweetalert2/dist/sweetalert2.min.css') }}">
 
     <!-- GOOGLE FONT -->
     {{--
@@ -110,23 +113,23 @@
                 <div class="row">
                     <div class="col-sm-3 col-md-3">
                         <div class="f-h-content">
-                            <h3>Call Us Now !</h3>
-                            <h2>002 0106 5370701</h2>
-                            <p><a href="#">24/7 Available</a></p>
+                            <h3>Appelez-nous maintenant </h3>
+                            <h2>@lang("info.contact.phone")</h2>
+                            <p><a href="#">24/7 Disponible</a></p>
                         </div>
                     </div>
-                    <div class="col-sm-3 col-md-3">
+                    <div class="col-sm-4 col-md-4">
                         <div class="f-h-content">
-                            <h3>Send Us Message !</h3>
-                            <h2>7oroof@7oroof.com</h2>
-                            <p><a href="#">24/7 Available</a></p>
+                            <h3>Ecrivez-nous</h3>
+                            <h2>@lang("info.contact.email")</h2>
+                            <p><a href="#">24/7 Disponible</a></p>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-6">
+                    <div class="col-sm-5 col-md-5">
                         <div class="f-h-content">
-                            <h3>Visit Our Office !</h3>
-                            <h2>Alnahas Building, 2 AlBahr St, Tanta AlGharbia, Egypt.</h2>
-                            <p><a href="#">View Map</a></p>
+                            <h3>Nos bureaux !</h3>
+                            <h2>@lang("info.contact.adresse")</h2>
+
                         </div>
                     </div>
                 </div>
@@ -138,11 +141,10 @@
                     <div class="col-sm-6 col-md-4">
                         <div class="f-first-content f-all-h2">
                             <div class="f-content-img">
-                                <a href="#"><img width="100" height="100" src="{{ asset('assets/images/jml2.png') }}" alt="f-image"></a>
+                                <a href="#"><img width="100" height="100" src="{{ asset('assets/images/jml2.png') }}"
+                                        alt="f-image"></a>
                             </div>
-                            <p>Trust is a business theme perfectly suited legal advisers and offices, lawyers,
-                                attorneys, counsels, advocates and other legal and law related services.Trust started as
-                                a sole practitioner providing services to the area community.</p>
+                            <p>@lang("info.contact.slogant")</p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-3">
@@ -162,14 +164,14 @@
                     </div>
                     <div class="col-sm-6 col-md-2">
                         <div class="f-third-content f-all-h2">
-                            <h2>Practice Areas</h2>
+                            <h2>@lang("info.m3")</h2>
                             <ul>
-                                <li><a href="#"><i class="fa fa-long-arrow-right"></i>Family Law</a></li>
-                                <li><a href="#"><i class="fa fa-long-arrow-right"></i>Fire Accident</a></li>
-                                <li><a href="#"><i class="fa fa-long-arrow-right"></i>Sexual Offences</a></li>
-                                <li><a href="#"><i class="fa fa-long-arrow-right"></i>Drug Offences</a></li>
-                                <li><a href="#"><i class="fa fa-long-arrow-right"></i>Financial Law</a></li>
-                                <li><a href="#"><i class="fa fa-long-arrow-right"></i>Shoplifting</a></li>
+                                <li><a href="#"><i class="fa fa-long-arrow-right"></i>@lang("info.m3")</a></li>
+                                <li><a href="#"><i class="fa fa-long-arrow-right"></i>@lang("info.m3")</a></li>
+                                <li><a href="#"><i class="fa fa-long-arrow-right"></i>@lang("info.m3")</a></li>
+                                <li><a href="#"><i class="fa fa-long-arrow-right"></i>@lang("info.m3")</a></li>
+                                <li><a href="#"><i class="fa fa-long-arrow-right"></i>@lang("info.m3")</a></li>
+                                <li><a href="#"><i class="fa fa-long-arrow-right"></i>@lang("info.m3")</a></li>
                             </ul>
                         </div>
                     </div>
@@ -194,17 +196,18 @@
                 <div class="clearfix footer-bottom">
                     <div class="col-md-6 col-sm-6 no-padding-left">
                         <div class="f-bottom-left-text">
-                            <p>JML © All Rights Reserved. Design by <span><a target="blank" href="silasmas.com">SDev</a></span> </p>
+                            <p>JML © All Rights Reserved. Design by <span><a target="blank"
+                                        href="silasmas.com">SDev</a></span> </p>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-6 no-padding-right">
                         <div class="f-bottom-right-text">
                             <ul>
-                                <li><a href="#">News</a></li>
-                                <li><a href="#">FAQs</a></li>
-                                <li><a href="#">Careers</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Terms of Use</a></li>
+                                <li><a href="">Blog</a></li>
+                                <li><a href="{{ route('about') }}">JML</a></li>
+                                <li><a href="{{ route('expertise') }}">@lang("info.m3")</a></li>
+                                <li><a href="{{ route('team') }}">@lang("info.m4")</a></li>
+                                <li><a href="#">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -227,8 +230,71 @@
     <script src="{{ asset('assets/js/jquery.magnific-popup.js')}}"></script>
     <script src="{{ asset('assets/js/jquery-ui.js')}}"></script>
     <script src="{{ asset('assets/js/rev-slider.js')}}"></script>
-    <script src="{{ asset('assets/js/main.js') }}"></script>
+    <script  src="{{ asset('assets/custom/sweetalert2/dist/sweetalert2.all.min.js') }}"></script>
 
+    <script src="{{ asset('assets/js/main.js') }}"></script>
+    <script>
+        $("#formMessage").on("submit", function (e) {
+                    e.preventDefault();
+                    var formElement = document.getElementById('formMessage');
+                    addAll(formElement, 'POST', 'sendMessage',"#formMessage")
+                });
+
+                function addAll(form, mothode, url,idf) {
+                    var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+                    var f = form;
+                    var u = url;
+                    var idform = idf;
+                    Swal.fire({
+                        title: 'Merci de patienter...',
+                        icon: 'info'
+                    })
+                        //  console.log($(form).serialize())
+                    $.ajax({
+                        url: u,
+                        method: mothode,
+                        data: $(f).serialize(),
+                        headers: {
+                            'X-CSRF-TOKEN': csrfToken
+                        },
+                        success: function (data) {
+                            if (!data.reponse) {
+                                var errorMessage = '';
+                            $.each(data.errors, function(key, value){
+                                errorMessage += value + '<br>';
+                            });
+                                Swal.fire({
+                                    title: data.msg+" : "+errorMessage,
+                                    icon: 'error'
+                                })
+                            } else {
+                                Swal.fire({
+                                    title: data.msg,
+                                    icon: 'success'
+                                })
+
+                                $(idform)[0].reset();
+                                // actualiser();
+                            }
+
+                        },
+                        error: function(xhr, status, error){
+                            // alerte("ok")
+                            var errors = xhr.responseJSON.errors;
+                            var errorMessage = '';
+                            $.each(errors, function(key, value){
+                                errorMessage += value + '<br>';
+                            });
+                             // Afficher les erreurs de validation à l'utilisateur
+                                Swal.fire({
+                                    title: xhr.msg,
+                                    html: errorMessage,
+                                        icon: 'error'
+                                    })
+                            }
+                    });
+                }
+    </script>
 </body>
 
 </html>

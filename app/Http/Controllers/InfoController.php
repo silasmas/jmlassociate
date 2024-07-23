@@ -11,8 +11,6 @@ use App\Models\expertise;
 use App\Models\fonction;
 use App\Models\info;
 use App\Models\publication;
-use App\Models\slides;
-use App\Models\sorte;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use PhpOffice\PhpWord\IOFactory;
@@ -26,67 +24,41 @@ class InfoController extends Controller
      */
     public function index()
     {
-        $publication = publication::with(['avocat', 'categorie'])->simplePaginate();
-        $avocat = avocat::get();
-        //    dd($avocat);
-        $accueil = accueil::first();
-        $bureau = bureau::all();
-        $slide = slides::all();
-        $about = about::first();
-        // dd(!empty($about->contenu)?Str::substr(strip_tags($about->contenu), 0, 200).'...':'');
-        $secteur = expertise::where('sorte', 1)
-            ->orderBy('expertises.created_at', 'asc')->get();
-        $domaine = expertise::where('sorte', 2)
-            ->orderBy('expertises.created_at', 'asc')->get();
-        return view('pages.accueil', compact('publication', 'avocat', 'accueil', 'bureau', 'slide', 'about', 'secteur', 'domaine'));
+
+        return view('pages.accueil');
     }
     public function about()
     {
-        $accueil = accueil::first();
-        $about = about::first();
-        // $type=type::all();
-        // dd(empty($about->contenu->contenu)?"vide":'oui');
-        $secteur = expertise::where('sorte', 1)
-            ->orderBy('expertises.created_at', 'asc')->get();
-        $domaine = expertise::where('sorte', 2)
-            ->orderBy('expertises.created_at', 'asc')->get();
-        return view('pages.about', compact('accueil', 'about', 'secteur', 'domaine'));
+        $titres = ["A propos", "home", "Tout sur JML"];
+        return view('pages.about', compact('titres'));
     }
     public function expertise()
     {
-        $accueil = accueil::first();
-        $secteur = expertise::where('sorte', 1)
-            ->orderBy('expertises.created_at', 'asc')->get();
-        $domaine = expertise::where('sorte', 2)
-            ->orderBy('expertises.created_at', 'asc')->get();
-
-        //    dd($expertises);
-        $i = 0;
-        $ii = 0;
-        $sortes = sorte::all();
-        return view('pages.expertise', compact('accueil', 'secteur', 'domaine', 'sortes', 'i', 'ii'));
+        $titres = ["Expertise", "home", "Liste des expertises"];
+        return view('pages.expertise', compact('titres'));
     }
     public function team()
     {
-        $accueil = accueil::first();
-        // $produits=avocat::with("fonction")->whereHas("fonction",function($q){
-        //     return $q->where("id",1);
-        // });
-        $avocat = avocat::with('fonction')->orderBy('niveau', 'asc')->get();
-        //$avocat=fonction::with('avocat')->distinct()->get();
-        $avocat = $avocat->groupBy(function ($member) {
-            return $member->niveau;
-        })->all();
-        //  dd($avocat);
-        //$avocat=$av->unique('finction_id');
-        $fonction = fonction::with('avocat')->get();
-        // dd($fonction->unique());
-        $bureau = bureau::all();
-        $secteur = expertise::where('sorte', 1)
-            ->orderBy('expertises.created_at', 'asc')->get();
-        $domaine = expertise::where('sorte', 2)
-            ->orderBy('expertises.created_at', 'asc')->get();
-        return view('pages.team', compact('avocat', 'accueil', 'fonction', 'bureau', 'secteur', 'domaine'));
+        // $accueil = accueil::first();
+        // // $produits=avocat::with("fonction")->whereHas("fonction",function($q){
+        // //     return $q->where("id",1);
+        // // });
+        // $avocat = avocat::with('fonction')->orderBy('niveau', 'asc')->get();
+        // //$avocat=fonction::with('avocat')->distinct()->get();
+        // $avocat = $avocat->groupBy(function ($member) {
+        //     return $member->niveau;
+        // })->all();
+        // //  dd($avocat);
+        // //$avocat=$av->unique('finction_id');
+        // $fonction = fonction::with('avocat')->get();
+        // // dd($fonction->unique());
+        // $bureau = bureau::all();
+        // $secteur = expertise::where('sorte', 1)
+        //     ->orderBy('expertises.created_at', 'asc')->get();
+        // $domaine = expertise::where('sorte', 2)
+        //     ->orderBy('expertises.created_at', 'asc')->get();
+        $titres = ["Notre équipe", "home", "Liste de nos avocats"];
+        return view('pages.team', compact('titres'));
     }
 
     public function publication()
@@ -135,13 +107,12 @@ class InfoController extends Controller
         // Créer un objet PhpWord
         $phpWord = IOFactory::load($filePath);
         // Chemin où enregistrer le fichier HTML
-        $htmlFilePath =  public_path('video/vd/test.html');
+        $htmlFilePath = public_path('video/vd/test.html');
 
         // Enregistrer le contenu du fichier Word en HTML
         $phpWord->save($htmlFilePath, 'HTML');
-          //dd($htmlFilePath);
-        $content="video/vd/test.html";
-
+        //dd($htmlFilePath);
+        $content = "video/vd/test.html";
 
         $avocat = avocat::with('publication')->findOrFail($id);
 

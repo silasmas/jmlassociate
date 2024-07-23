@@ -1918,7 +1918,7 @@ p {
     	CONTACT AREA
 -----------------------------------------*/
 .contact-us {
-    background: url(assets/images/contact-us-bg.png);
+    background: url(../../assets/images/contact-us-bg.png);
     background-size: cover;
     position: relative;
     padding-bottom: 90px;
@@ -3179,7 +3179,7 @@ select::-ms-expand {
 }
 
 .contact-us-4 {
-    background: url(../assets/images/contact-us-bg.png);
+    background: url(../../assets/images/contact-us-bg.png);
     background-size: cover;
     position: relative;
     padding-bottom: 90px;
@@ -4100,7 +4100,7 @@ select::-ms-expand {
 }
 
 .about-us-page-title-bg {
-    background: url(../assets/images/page-titles/about-us-1.jpg);
+    background: url(../../assets/images/page-titles/about.jpg);
 }
 
 .client-title-bg {
@@ -4120,7 +4120,7 @@ select::-ms-expand {
 }
 
 .practice-block-title-bg {
-    background: url(../assets/images/contact-us-bg.png);
+    background: url(../../assets/images/contact-us-bg.png);
 }
 
 .attorney-page-title-bg {
