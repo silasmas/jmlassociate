@@ -10,7 +10,7 @@
                 <div class="practice-single-content">
                     <div class="col-md-9 col-sm-12 col-md-push-3 no-padding-right blog-custom-padding">
                         <div class="inner-single-practice">
-                            <img src="{{file_exists('storage/'.$Onesecteur->photo)?'../storage/'.$Onesecteur->photo:asset('img/def.jpeg')}}" class="img-responsive" alt="">
+                            <img src="{{file_exists('storage/'.$Onesecteur->photo)?'../storage/'.$Onesecteur->photo:asset('img/JML _ Logo1.jpg')}}" class="img-responsive" alt="">
                             <h2>Description :</h2>
                             <p>
                                 {!! $Onesecteur->contenu !!}
