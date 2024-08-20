@@ -16,13 +16,15 @@
                             <div class="team-img attorney-team-img">
                                 <img src="{{ asset('storage/'.$av->photo) }}" alt="team-member">
                                 <div class="attorney-content-default text-center">
-                                    <h2><a href="#">{{ $av->prenom." ".$av->nom }}</a></h2>
+                                    <h2><a href="{{ route('detailTeam',['id'=>$av->id]) }}">{{ $av->prenom." ".$av->nom
+                                            }}</a></h2>
                                     <p>{{ $av->fonction->nom }}</p>
                                 </div>
                             </div>
                             <div class="about-attorney-member text-center">
                                 <div class="attorney-content-default-hover">
-                                    <h2><a href="#">{{ $av->prenom." ".$av->nom }}</a></h2>
+                                    <h2><a href="{{ route('detailTeam',["id"=> $av->id]) }}">{{ $av->prenom."
+                                            ".$av->nom }}</a></h2>
                                     <p>{{ $av->fonction->nom }}</p>
                                 </div>
                                 <div class="social-content-box attorney-team-social">
@@ -47,9 +49,9 @@
                             <li><a href="#">1</a></li>
                             <li><a href="#">2</a></li>
                             <li>
-                              <a href="#" aria-label="Next">
-                                <i class="fa fa-long-arrow-right"></i>
-                              </a>
+                                <a href="#" aria-label="Next">
+                                    <i class="fa fa-long-arrow-right"></i>
+                                </a>
                             </li>
                         </ul>
                     </nav>

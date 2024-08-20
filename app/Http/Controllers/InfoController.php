@@ -66,24 +66,18 @@ class InfoController extends Controller
         $avocat = avocat::all();
         $categorie = categorie::with('publication')->get();
         $accueil = accueil::first();
-        $publication = publication::with(['avocat', 'categorie'])->simplePaginate();
-        // $type=type::all();
+        $publication = publication::with(['avocat', 'categorie'])->get();
+        // dd($publication);
         $secteur = expertise::where('sorte', 1)
             ->orderBy('expertises.created_at', 'asc')->get();
         $domaine = expertise::where('sorte', 2)
             ->orderBy('expertises.created_at', 'asc')->get();
-        return view('pages.publication', compact('publication', 'avocat', 'categorie', 'accueil', 'secteur', 'domaine'));
+        $titres = ["Notre Blog", "home", "Nos publications"];
+        return view('pages.blog', compact('titres', 'publication', 'avocat', 'categorie', 'accueil', 'secteur', 'domaine'));
     }
-    public function presence()
+    public function contact()
     {
-        $accueil = accueil::first();
-        $presence = bureau::all();
-        // $type=type::all();
-        $secteur = expertise::where('sorte', 1)
-            ->orderBy('expertises.created_at', 'asc')->get();
-        $domaine = expertise::where('sorte', 2)
-            ->orderBy('expertises.created_at', 'asc')->get();
-        return view('pages.presence', compact('accueil', 'presence', 'secteur', 'domaine'));
+        return view('pages.contact');
     }
     public function show_pub()
     {
@@ -125,7 +119,9 @@ class InfoController extends Controller
             ->orderBy('expertises.created_at', 'asc')->get();
         $domaine = expertise::where('sorte', 2)
             ->orderBy('expertises.created_at', 'asc')->get();
-        return view('pages.detailAvocat', compact('content', 'avocat', 'avocats', 'accueil', 'secteur', 'domaine', 'bureau'));
+        $titres = ["Equipe", "../team", "Detail sur l'avocat"];
+
+        return view('pages.detailTeam', compact('titres', 'content', 'avocat', 'avocats', 'accueil', 'secteur', 'domaine', 'bureau'));
     }
     public function show_secteur()
     {

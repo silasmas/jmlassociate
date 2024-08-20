@@ -6,6 +6,7 @@ return [
         'about' => 'Apropo',
         'expertise' => 'Expertise',
         'presence' => 'Presence',
+        'detailTeam' => 'Detail sur l\'avocat',
         'publication' => 'Publications',
         'team' => 'Equipe',
         'vuepar' => 'Afficher par',

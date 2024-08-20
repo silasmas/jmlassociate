@@ -22,7 +22,7 @@
                                     <div class="ibox-content product-box">
 
                                         <div class="product-imitation" style="padding: 2px 0 !important;">
-                                            <img src="{{'../storage/'.$pub->photo}}" class="img-responsive"
+                                            <img src="{{file_exists('storage/'.$pub->photo)?'../storage/'.$pub->photo:asset('img/def.jpeg')}}" class="img-responsive"
                                                 style="height: 250px !important;" height="50" />
                                         </div>
                                         <div class="product-desc">
@@ -63,7 +63,7 @@
                                     <div class="ibox-content product-box">
 
                                         <div class="product-imitation" style="padding: 2px 0 !important;">
-                                            <img src="{{'../storage/'.$pub->photo}}" class="img-responsive"
+                                            <img src="{{file_exists('storage/'.$pub->photo)?'../storage/'.$pub->photo:asset('img/def.jpeg')}}" class="img-responsive"
                                                 style="height: 250px !important;" height="50" />
                                         </div>
                                         <div class="product-desc">

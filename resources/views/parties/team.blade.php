@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-6">
                     <div class="asset-button btn-text-left text-right top-margin">
-                        <button type="button" class="btn btn-default">Meet The Whole Team</button>
+                        <button type="button" class="btn btn-default" onClick="location.href='{{ route('team') }}'">Voir toute l'équipe</button>
                     </div>
                 </div>
             </div>
@@ -25,20 +25,20 @@
     <div class="team-member-area">
         <div class="container">
             <div class="row">
-                @forelse ($avocat as $av)
+                @forelse ($avocat->take(4) as $av)
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="team-description">
                         <div class="team-content">
                             <div class="team-img attorney-team-img">
                                 <img src="{{ asset('storage/'.$av->photo) }}" alt="team-member">
                                 <div class="attorney-content-default text-center">
-                                    <h2><a href="#">{{ $av->prenom." ".$av->nom }}</a></h2>
+                                    <h2><a href="{{ route('detailTeam',["id"=> $av->id]) }}">{{ $av->prenom." ".$av->nom }}</a></h2>
                                     <p>{{ $av->fonction->nom }}</p>
                                 </div>
                             </div>
                             <div class="about-attorney-member text-center">
                                 <div class="attorney-content-default-hover">
-                                    <h2><a href="#">{{ $av->prenom." ".$av->nom }}</a></h2>
+                                    <h2><a href="{{ route('detailTeam',["id"=> $av->id]) }}">{{ $av->prenom." ".$av->nom }}</a></h2>
                                     <p>{{ $av->fonction->nom }}</p>
                                 </div>
                                 <div class="social-content-box attorney-team-social">

@@ -24,7 +24,7 @@ Route::get('about', [InfoController::class, 'about'])->name('about');
 Route::get('expertise', [InfoController::class, 'expertise'])->name('expertise');
 Route::get('team', [InfoController::class, 'team'])->name('team');
 Route::get('publication', [InfoController::class, 'publication'])->name('publication');
-Route::get('presence', [InfoController::class, 'presence'])->name('presence');
+Route::get('contact', [InfoController::class, 'contact'])->name('contact');
 
 Route::get('detailPublication', [InfoController::class, 'show_pub'])->name('detailPublication');
 Route::get('detailTeam/{id}', [InfoController::class, 'show_team'])->name('detailTeam');

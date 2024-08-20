@@ -238,7 +238,7 @@
                     e.preventDefault();
                     var formElement = document.getElementById('formMessage');
                     addAll(formElement, 'POST', 'sendMessage',"#formMessage")
-                });
+        });
 
                 function addAll(form, mothode, url,idf) {
                     var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');

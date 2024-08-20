@@ -88,9 +88,9 @@
                             </div>
                         </div>
                     </li>
-                    <li  class="{{ Route::current()->getName()=="team"?"active":""}}"><a href="{{ route('team') }}">@lang("info.menu.team")</a></li>
-                    <li><a href="{{ route('team') }}">@lang("info.menu.blog")</a></li>
-                    <li><a href="{{ route('team') }}">@lang("info.menu.contact")</a></li>
+                    <li class="{{ Route::current()->getName()=="team"?"active":""}}"><a href="{{ route('team') }}">@lang("info.menu.team")</a></li>
+                    <li class="{{ Route::current()->getName()=="publication"?"active":""}}"><a href="{{ route('publication') }}">@lang("info.menu.blog")</a></li>
+                    <li class="{{ Route::current()->getName()=="contact"?"active":""}}"><a href="{{ route('contact') }}">@lang("info.menu.contact")</a></li>
                 </ul>
             </div>
         </div>
