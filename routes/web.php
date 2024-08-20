@@ -30,9 +30,9 @@ Route::get('detailPublication', [InfoController::class, 'show_pub'])->name('deta
 Route::get('detailTeam/{id}', [InfoController::class, 'show_team'])->name('detailTeam');
 Route::get('teamByCat/{id}', [InfoController::class, 'show'])->name('teamByCat');
 Route::get('teamByBureau/{id}', [InfoController::class, 'teamByBureau'])->name('teamByBureau');
-Route::get('detailExpertise', [InfoController::class, 'show_secteur'])->name('detailExpertise');
+Route::get('detailExpertise/{id}', [InfoController::class, 'show_secteur'])->name('detailExpertise');
 Route::get('detailBureau/{id}', [BureauController::class, 'show'])->name('detailBureau');
-Route::get('detailCompetence', [InfoController::class, 'show_competence'])->name('detailCompetence');
+Route::get('detailCompetence/{id}', [InfoController::class, 'show_competence'])->name('detailCompetence');
 Route::get('downloadCv', [AvocatController::class, 'downloadCv'])->name('downloadCv');
 Route::get('downloadQr/{id}', [AvocatController::class, 'downloadQr'])->name('downloadQr');
 Route::get('downloadQrHome', [AvocatController::class, 'downloadQrHome'])->name('downloadQrHome');

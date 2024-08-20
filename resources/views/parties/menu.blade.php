@@ -51,7 +51,7 @@
                                     </h3><br>
                                         @if (!$secteur->isEmpty())
                                             @forelse ($secteur as $sec)
-                                            <li><a href="{{ route('detailExpertise',['id'=>$sec->id,'p'=>$sec->titre1]) }}">{{
+                                            <li><a href="{{ route('detailExpertise',['id'=>$sec->id]) }}">{{
                                                     $sec->titre1 }}</a></li>
                                             @empty
 
@@ -67,7 +67,7 @@
                                     </h3>
                                         @if (!$domaine->isEmpty())
                                     @forelse ($domaine as $sec)
-                                    <li><a href="{{ route('detailExpertise',['id'=>$sec->id,'p'=>$sec->titre1]) }}">{{
+                                    <li><a href="{{ route('detailCompetence',['id'=>$sec->id]) }}">{{
                                             $sec->titre1 }}</a></li>
                                     @empty
 

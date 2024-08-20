@@ -123,27 +123,28 @@ class InfoController extends Controller
 
         return view('pages.detailTeam', compact('titres', 'content', 'avocat', 'avocats', 'accueil', 'secteur', 'domaine', 'bureau'));
     }
-    public function show_secteur()
+    public function show_secteur($id)
     {
-        $secteur = expertise::where('sorte', 1)
+        $secteurs = expertise::where('sorte', 1)
             ->orderBy('expertises.created_at', 'asc')->get();
-        $domaine = expertise::where('sorte', 2)
-            ->orderBy('expertises.created_at', 'asc')->get();
-
+        $Onesecteur = expertise::find($id);
+        // dd($secteur->photo);
         $accueil = accueil::first();
+        $titres = ["Secteur d'activités", "../expertise", "Detail Secteur d'activités"];
         // $secteur=expertise::where('sorte',1)->get();
-        return view('pages.detailSecteur', compact('accueil', 'secteur', 'secteur', 'domaine'));
+        return view('pages.detailExpertise', compact('titres', 'accueil', 'Onesecteur', 'secteurs'));
     }
 
-    public function show_competence()
+    public function show_competence($id)
     {
         $accueil = accueil::first();
-        $secteur = expertise::where('sorte', 1)
+        $domaine = expertise::where('sorte', 1)
             ->orderBy('expertises.created_at', 'asc')->get();
-        $domaine = expertise::where('sorte', 2)
-            ->orderBy('expertises.created_at', 'asc')->get();
+        $Onesecteur = expertise::find($id);
         // $type=type::all();
-        return view('pages.detailCompetance', compact('accueil', 'secteur', 'domaine'));
+
+        $titres = ["Domaine de competence", "../expertise", "Detail Domaine de competence"];
+        return view('pages.detailExpertise', compact('titres', 'accueil', 'Onesecteur', 'domaine'));
     }
 
     /**
