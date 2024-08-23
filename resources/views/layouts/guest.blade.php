@@ -18,7 +18,7 @@
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
             <div>
                 <a href="/">
-                    <img src="{{ asset('assets/images/PlaLogo.ico') }}" height="100" width="100"/>
+                    <img src="{{ asset('assets/images/jml1.png') }}" height="100" width="100"/>
                 </a>
             </div>
 

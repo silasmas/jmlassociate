@@ -7,17 +7,20 @@
 <div class="rev_slider_wrapper">
     <div id="slider1" class="rev_slider" data-version="5.0">
         <ul>
+            @forelse ($slides as $s)
+
+
             <li data-index="rs-6" data-transition="parallaxtoright" data-slotamount="default" data-easein="default"
                 data-easeout="default" data-masterspeed="default" data-delay="6510" data-rotate="0"
                 data-saveperformance="off" data-title="Slide" data-description="">
                 <!-- MAIN IMAGE -->
-                <img src="{{ asset('img/slides/slide_1.jpg') }}" alt="" width="1920" height="1280"
+                <img src="{{ asset('storage/'.$s->photo) }}" alt="" width="1920" height="1280"
                     data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off"
                     class="rev-slidebg" data-no-retina>
                 <!-- LAYERS -->
 
                 <!-- LAYER NR. 1 -->
-                <div class="tp-caption Fashion-BigDisplay tp-resizeme rs-parallaxlevel-0" id="slide-6-layer-1"
+                <div class="tp-caption Fashion-BigDisplay tp-resizeme rs-parallaxlevel-0" id="slide-6-layer-{{$s->id }}"
                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                     data-y="['top','top','top','top']" data-voffset="['180','180','180','180']" data-width="none"
                     data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;"
@@ -25,11 +28,11 @@
                     data-transform_out="x:50px;opacity:0;s:500;s:500;" data-start="700" data-splitin="none"
                     data-splitout="none" data-responsive_offset="on"
                     style="z-index: 5; white-space: nowrap; font-size: 17px; line-height: 28px; font-weight: 400; color: rgba(241, 241, 241, 1.00);font-family: 'Metropolis Light', sans-serif;">
-                    <span>Your Legal Solution Starts Here !</span>
+                    <span>{{$s->titresmall }}</span>
                 </div>
 
                 <!-- LAYER NR. 2 -->
-                <div class="tp-caption Fashion-BigDisplay tp-resizeme rs-parallaxlevel-0" id="slide-6-layer-2"
+                <div class="tp-caption Fashion-BigDisplay tp-resizeme rs-parallaxlevel-0" id="slide-6-layer-{{$s->id }}"
                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                     data-y="['top','top','top','top']" data-voffset="['225','225','225','225']" data-width="none"
                     data-height="none" data-fontsize="['50','40','40','25']" data-lineheight="['58','40','40','30']"
@@ -38,35 +41,36 @@
                     data-transform_out="x:-50px;opacity:0;s:500;s:500;" data-start="1200" data-splitin="none"
                     data-splitout="none" data-responsive_offset="on"
                     style="font-family: 'Metropolis SemiBold', sans-serif; z-index: 6; white-space: nowrap; font-size: 50px; line-height: 58px; font-weight: 800; color: rgba(255, 255, 255, 1.00);">
-                    <div class="text-center heading-rp-small" style=" text-transform: uppercase;">The Greatest &
-                        Strongest Firm<br />
-                        You Can Trust</div>
+                    <div class="text-center heading-rp-small" style=" text-transform: uppercase;">{{ $s->titrebig }}</div>
                 </div>
 
                 <!-- LAYER NR. 3 -->
-                <div class="tp-caption tp-resizeme rs-parallaxlevel-0" id="slide-6-layer-3"
+                {{-- <div class="tp-caption tp-resizeme rs-parallaxlevel-0" id="slide-6-layer-{{$s->id }}"
                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                     data-y="['top','top','top','top']" data-voffset="['364','364','364','364']" data-width="none"
                     data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;"
                     data-transform_in="y:50px;opacity:0;s:500;e:Power2.easeInOut;"
                     data-transform_out="y:50px;opacity:0;s:500;s:500;" data-start="1700" data-responsive_offset="on"
-                    style="z-index: 7;"><img src="{{ asset('assets/images/line-slider.jpg') }}" alt="" width="2"
+                    style="z-index: 7;"><img src="{{ asset('storage/'.$s->photo) }}" alt="" width="2"
                         height="34" data-ww="['2px','2px','2px','2px']" data-hh="['34px','34px','34px','34px']"
                         data-no-retina>
-                </div>
+                </div> --}}
 
                 <!-- LAYER NR. 4 -->
-                <div class="tp-caption small_text tp-resizeme rs-parallaxlevel-0" id="slide-6-layer-4"
+                <div class="tp-caption small_text tp-resizeme rs-parallaxlevel-0" id="slide-6-layer-{{$s->id }}"
                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                     data-y="['top','top','top','top']" data-voffset="['428','428','428','428']" data-width="none"
                     data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;"
                     data-transform_in="y:50px;opacity:0;s:500;e:Power2.easeInOut;"
                     data-transform_out="y:50px;opacity:0;s:500;s:500;" data-start="2200" data-splitin="none"
                     data-splitout="none" data-responsive_offset="on" style="z-index: 8; white-space: nowrap;"><a
-                        class="btn btn-default-alt rev-slider-btn-1" href="#">Request A free Consultation</a>
+                        class="btn btn-default-alt rev-slider-btn-1" href="{{ route($s->lienvers) }}">{{ $s->textbtn }}</a>
                 </div>
             </li>
-            <li data-index="rs-7" data-transition="parallaxtoright" data-slotamount="default" data-easein="default"
+            @empty
+
+            @endforelse
+            {{-- <li data-index="rs-7" data-transition="parallaxtoright" data-slotamount="default" data-easein="default"
                 data-easeout="default" data-masterspeed="default" data-delay="6500" data-rotate="0"
                 data-saveperformance="off" data-title="Slide" data-description="">
                 <!-- MAIN IMAGE -->
@@ -306,7 +310,7 @@
                     <a href="#" class="btn btn-primary rev-slider-btn-1 rev-slider-btn-2">Request A free
                         Consultation</a>
                 </div>
-            </li>
+            </li> --}}
 
         </ul>
     </div><!-- END REVOLUTION SLIDER -->

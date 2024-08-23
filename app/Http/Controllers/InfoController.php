@@ -11,6 +11,7 @@ use App\Models\expertise;
 use App\Models\fonction;
 use App\Models\info;
 use App\Models\publication;
+use App\Models\slides;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use PhpOffice\PhpWord\IOFactory;
@@ -24,8 +25,8 @@ class InfoController extends Controller
      */
     public function index()
     {
-
-        return view('pages.accueil');
+        $slides = slides::get();
+        return view('pages.accueil', compact('slides'));
     }
     public function about()
     {
