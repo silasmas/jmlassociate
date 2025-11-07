@@ -2,7 +2,7 @@
 
 namespace App\Filament\Widgets;
 
-use App\Models\Fonction;
+use App\Models\fonction;
 use Filament\Widgets\ChartWidget;
 use Illuminate\Contracts\Support\Htmlable;
 class AvocatsPerFonctionChart extends ChartWidget
@@ -13,7 +13,7 @@ public function getHeading(): string
 }
     protected function getData(): array
     {
-        $data = Fonction::withCount('avocat')
+        $data = fonction::withCount('avocat')
             ->orderByDesc('avocat_count')
             ->take(8)
             ->get();
