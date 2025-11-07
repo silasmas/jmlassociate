@@ -5,7 +5,7 @@ namespace App\Filament\Widgets;
 use App\Models\avocat;
 use App\Models\publication;
 use App\Models\expertise;
-// use App\Models\Category;
+use App\Models\Category;
 use App\Models\bureau;
 use App\Models\categorie;
 use App\Models\User;
