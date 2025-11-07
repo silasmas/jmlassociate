@@ -296,6 +296,70 @@
                             }
                     });
                 }
+              
+(function () {
+  const form   = document.getElementById('contactForm');
+  const btn    = document.getElementById('contact_submit');
+  const alertB = document.getElementById('contact-alert');
+
+  function setAlert(type, text) {
+    alertB.className = 'alert alert-' + type;
+    alertB.innerText = text;
+    alertB.style.display = 'block';
+  }
+
+  function clearErrors() {
+    document.querySelectorAll('[data-error]').forEach(el => el.textContent = '');
+    alertB.style.display = 'none';
+  }
+
+  async function submitContact() {
+    clearErrors();
+    btn.disabled = true;
+    const original = btn.innerHTML;
+    btn.innerHTML = 'Envoi...';
+
+    const url  = "{{ route('contact.store') }}";
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest',
+          'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value
+        },
+        body: formData
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setAlert('success', data.message || 'Message envoyé !');
+        form.reset();
+      } else if (res.status === 422) {
+        // erreurs de validation Laravel
+        const errs = data.errors || {};
+        Object.keys(errs).forEach((k) => {
+          const el = document.querySelector('[data-error="'+k+'"]');
+          if (el) el.textContent = errs[k][0];
+        });
+        setAlert('danger', data.message || "Veuillez corriger les erreurs.");
+      } else if (res.status === 429) {
+        setAlert('warning', "Trop de tentatives. Réessayez dans une minute.");
+      } else {
+        setAlert('danger', data.message || "Une erreur est survenue.");
+      }
+    } catch (e) {
+      setAlert('danger', "Impossible d'envoyer votre message. Vérifiez votre connexion.");
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = original;
+    }
+  }
+
+  btn.addEventListener('click', submitContact);
+})();
     </script>
 </body>
 

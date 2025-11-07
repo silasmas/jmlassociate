@@ -3,7 +3,7 @@
 
 @section("content")
 @include("parties.baniere")
-
+ 
 
 <section class="attorney-single-area">
     <div class="testimonial-content-area">

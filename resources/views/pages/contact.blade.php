@@ -1,4 +1,4 @@
-@extends("parties.template",['titre'=>__('info.titrepage.publication')])
+@extends("parties.template",['titre'=>__('Contactez-nous')])
 
 
 @section("content")
@@ -32,23 +32,34 @@
 
         <div class="col-sm-6 col-md-8 no-padding">
           <div class="contact-us-1-form clearfix">
-            <form>
-              <div class="col-sm-6 no-padding-left">
-                <input type="text" class="form-control" id="Name" placeholder="VOTRE NOM">
-              </div>
-              <div class="col-sm-6 no-padding-right">
-                <input type="email" class="form-control" id="Email" placeholder="ADRESSE E-MAIL">
-              </div>
-              <div class="col-sm-12 no-padding contact-us-custom-padding">
-                <input type="text" class="form-control" id="Subject" placeholder="OBJET DE VOTRE MESSAGE">
-              </div>
-              <div class="col-sm-12 no-padding contact-us-custom-padding">
-                <textarea class="form-control" rows="8" id="Message" placeholder="VOTRE MESSAGE"></textarea>
-              </div>
-              <div class="col-sm-12 no-padding contact-us-custom-padding">
-                <button type="button" id="contact_submit" class="btn btn-dm">ENVOYER MA DEMANDE</button>
-              </div>
-            </form>
+            <form id="contactForm" novalidate>
+    @csrf
+    <!-- Honeypot anti-bot -->
+    <input type="text" name="website" id="website" style="display:none !important; visibility:hidden;" tabindex="-1" autocomplete="off">
+
+    <div id="contact-alert" class="alert" style="display:none"></div>
+
+    <div class="col-sm-6 no-padding-left">
+        <input type="text" class="form-control" name="nom" id="Name" placeholder="VOTRE NOM">
+        <small class="text-danger d-block mt-1" data-error="nom"></small>
+    </div>
+    <div class="col-sm-6 no-padding-right">
+        <input type="email" class="form-control" name="email" id="Email" placeholder="ADRESSE E-MAIL">
+        <small class="text-danger d-block mt-1" data-error="email"></small>
+    </div>
+    <div class="col-sm-12 no-padding contact-us-custom-padding">
+        <input type="text" class="form-control" name="sujet" id="Subject" placeholder="OBJET DE VOTRE MESSAGE">
+        <small class="text-danger d-block mt-1" data-error="sujet"></small>
+    </div>
+    <div class="col-sm-12 no-padding contact-us-custom-padding">
+        <textarea class="form-control" rows="8" name="message" id="Message" placeholder="VOTRE MESSAGE"></textarea>
+        <small class="text-danger d-block mt-1" data-error="message"></small>
+    </div>
+    <div class="col-sm-12 no-padding contact-us-custom-padding">
+        <button type="button" id="contact_submit" class="btn btn-dm">ENVOYER MA DEMANDE</button>
+    </div>
+</form>
+
           </div>
         </div>
 
@@ -64,7 +75,7 @@
             <div class="address-details">
               <span>Téléphone&nbsp;:</span>
               <span><i class="fa fa-phone"></i>{{ collect($phones)->pluck('value')->filter()->implode(' - ') }}</span> <!-- Remplace par le n° JML -->
-            
+
             </div>
           </div>
 

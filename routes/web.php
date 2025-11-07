@@ -13,6 +13,7 @@ use App\Http\Controllers\InfoController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\SlidesController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
 
 // Route::group(
 //     [
@@ -47,7 +48,9 @@ Route::get('/cv', function () {
     return view('cv', ['htmlFilePath' => 'video/CV_Me_Lionnel.html']);
 })->name('cv');
 
-// });
+Route::post('/contact', [ContactController::class, 'store'])
+    ->name('contact.store')
+    ->middleware('throttle:10,1'); // max 10 requêtes / minute par IP
 
 Route::middleware(['auth'])->group(function () {
     //newsletter
