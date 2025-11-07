@@ -13,12 +13,12 @@ class avocat extends Model
 {
     use HasFactory;
 
-    use HasTranslations;
+    // use HasTranslations;
     protected $guarded = [];
     protected $dates = ['created_at', 'updated_at'];
 
     protected $with = ['publication', 'bureau', 'fonction'];
-    public $translatable = ['biographie'];
+    // public $translatable = ['biographie'];
 
     public function publication()
     {

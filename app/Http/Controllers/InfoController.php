@@ -26,6 +26,7 @@ class InfoController extends Controller
     public function index()
     {
         $slides = slides::get();
+  
         return view('pages.accueil', compact('slides'));
     }
     public function about()
@@ -78,7 +79,8 @@ class InfoController extends Controller
     }
     public function contact()
     {
-        return view('pages.contact');
+         $titres = ["Nous contacter", "home", "Contact"];
+        return view('pages.contact',compact('titres'));
     }
     public function show_pub()
     {

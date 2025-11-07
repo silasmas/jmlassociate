@@ -4,23 +4,24 @@
             <div id="menuzord" class="menuzord">
                 <a href="{{ route('home') }}" class="menuzord-brand">
                     <img src="{{ asset('assets/images/jml1.png') }}" width="150" height="70" alt="">
-                    <span>We provide legal solutions <br>for you !</span>
+                    <span>Nous vous apportons des solutions juridiques<br>sur mesure&nbsp;!</span>
+
                 </a>
 
                 <div class="header-contact">
                     <ul>
-                        <li><span>Phone :</span>@lang("info.contact.phone")</li>
-                        <li><span>Email :</span>@lang("info.contact.email")</li>
-                        <li><a href="#">@lang("info.menu.consultation")</a></li>
+                        <li><span>Phone :</span>{{ collect($phones)->pluck('value')->filter()->implode(' - ') }}</li>
+                        <li><span>Email : </span>{{$home->email}}</li>
+                        <li><a href="{{ route('contact') }}">@lang("info.menu.consultation")</a></li>
                     </ul>
                 </div>
 
                 <div class="header-search">
-                    <ul>
+                   {{-- <ul>
                         <li class="add-to-cart"><a href="#"><i class="fa fa-globe"></i></a></li>
                         <li><a href="#"> {{ App::currentLocale()}}</a></li>
                     </ul>
-                    <div class="add-to-cart-content">
+                     <div class="add-to-cart-content">
                         <div class="recent-post shop-right-thumb">
                             @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                             <h3>
@@ -32,7 +33,7 @@
                             </h3>
                             @endforeach
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
 
                 <ul class="menuzord-menu menuzord-menu-bg">
@@ -76,7 +77,7 @@
 
                                     </ul>
                                 </div>
-                                {{-- <div class="mega-item col4">
+                                 {{-- <div class="mega-item col4">
                                     <ul>
                                         <li><a href="home-11.html">Homepage 11</a></li>
                                         <li><a href="home-12.html">Homepage 12</a></li>

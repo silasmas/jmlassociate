@@ -4,6 +4,7 @@ return [
     'titrepage' => [
         'home' => 'Accueil',
         'about' => 'Apropo',
+        'contact' => 'Contact',
         'expertise' => 'Expertise',
         'presence' => 'Presence',
         'detailTeam' => 'Detail sur l\'avocat',

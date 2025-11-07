@@ -23,7 +23,7 @@ class CreateAvocatsTable extends Migration
             $table->string('telephone');
             $table->string('email')->nullable();
             $table->foreignIdFor(fonction::class);
-            $table->json('biographie')->nullable();
+            $table->text('biographie')->nullable();
             $table->string('pdfbio')->nullable();
             $table->string('photo')->nullable();
             $table->enum('niveau', array('1','2'));

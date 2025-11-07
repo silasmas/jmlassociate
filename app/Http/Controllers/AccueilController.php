@@ -14,8 +14,8 @@ class AccueilController extends Controller
      */
     public function index()
     {
-        $home=accueil::first();
-        return view('admin.g_accueil',compact('home'));
+       
+        return view('admin.g_accueil');
     }
 
     /**

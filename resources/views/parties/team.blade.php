@@ -26,6 +26,21 @@
         <div class="container">
             <div class="row">
                 @forelse ($avocat->take(4) as $av)
+
+                            @php
+                    $html = $av->biographie;
+
+                    libxml_use_internal_errors(true);
+                    $dom = new DOMDocument();
+                    $dom->loadHTML('<?xml encoding="utf-8" ?>' . $html);
+                    libxml_clear_errors();
+
+                    $pNodes = $dom->getElementsByTagName('p');
+
+                    $firstParagraphHtml = $pNodes->length
+                        ? $dom->saveHTML($pNodes->item(0))
+                        : '<p>' . \Illuminate\Support\Str::limit(strip_tags($html), 200) ." ..." . '</p>';
+                        @endphp
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="team-description">
                         <div class="team-content">
@@ -39,7 +54,7 @@
                             <div class="about-attorney-member text-center">
                                 <div class="attorney-content-default-hover">
                                     <h2><a href="{{ route('detailTeam',["id"=> $av->id]) }}">{{ $av->prenom." ".$av->nom }}</a></h2>
-                                    <p>{{ $av->fonction->nom }}</p>
+                                       {!! $firstParagraphHtml!!}
                                 </div>
                                 <div class="social-content-box attorney-team-social">
                                     <a href="#"> <i class="fa fa-facebook"></i> </a>

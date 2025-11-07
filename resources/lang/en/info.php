@@ -5,6 +5,7 @@ return [
     'titrepage' => [
         'home' => 'Home',
         'about' => 'About Us',
+        'contact' => 'Contact',
         'expertise' => 'Expertise',
         'presence' => 'Presence',
         'publication' => 'Publication',

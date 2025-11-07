@@ -162,32 +162,33 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-2">
+                    <div class="col-sm-6 col-md-5">
                         <div class="f-third-content f-all-h2">
                             <h2>@lang("info.m3")</h2>
                             <ul>
-                                <li><a href="#"><i class="fa fa-long-arrow-right"></i>@lang("info.m3")</a></li>
-                                <li><a href="#"><i class="fa fa-long-arrow-right"></i>@lang("info.m3")</a></li>
-                                <li><a href="#"><i class="fa fa-long-arrow-right"></i>@lang("info.m3")</a></li>
-                                <li><a href="#"><i class="fa fa-long-arrow-right"></i>@lang("info.m3")</a></li>
-                                <li><a href="#"><i class="fa fa-long-arrow-right"></i>@lang("info.m3")</a></li>
-                                <li><a href="#"><i class="fa fa-long-arrow-right"></i>@lang("info.m3")</a></li>
+                                @forelse ( $expertises as $a)
+                                <li><a href="#"><i class="fa fa-long-arrow-right"></i>
+                                    {{$a->titre1}}</a></li>
+
+                                @empty
+
+                                @endforelse
                             </ul>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-3">
+                    {{-- <div class="col-sm-6 col-md-3">
                         <div class="f-fourth-content f-all-h2">
                             <h2>Newsletter</h2>
-                            <p>Don’t miss to subscribe to our news feeds, kindly fill the form below.</p>
+                            <p>@lang('info.footer.msgNewsletter')</p>
                             <form>
                                 <div class="form-group footer-subscribe">
                                     <input type="email" class="form-control" id="Email1"
-                                        placeholder="Subscribe In Our Newsletter">
+                                        placeholder="Subscrivez à notre Newsletter">
                                     <button type="submit" class="btn btn-default">Join</button>
                                 </div>
                             </form>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -203,11 +204,11 @@
                     <div class="col-md-6 col-sm-6 no-padding-right">
                         <div class="f-bottom-right-text">
                             <ul>
-                                <li><a href="">Blog</a></li>
+                                <li><a href="{{ route('home') }}">Accueil</a></li>
                                 <li><a href="{{ route('about') }}">JML</a></li>
                                 <li><a href="{{ route('expertise') }}">@lang("info.m3")</a></li>
                                 <li><a href="{{ route('team') }}">@lang("info.m4")</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="{{ route('contact') }}">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -230,6 +231,7 @@
     <script src="{{ asset('assets/js/jquery.magnific-popup.js')}}"></script>
     <script src="{{ asset('assets/js/jquery-ui.js')}}"></script>
     <script src="{{ asset('assets/js/rev-slider.js')}}"></script>
+      <script src="{{ asset('assets/js/map.js')}}"></script>
     <script  src="{{ asset('assets/custom/sweetalert2/dist/sweetalert2.all.min.js') }}"></script>
 
     <script src="{{ asset('assets/js/main.js') }}"></script>
