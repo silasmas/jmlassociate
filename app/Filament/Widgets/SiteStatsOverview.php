@@ -2,11 +2,11 @@
 
 namespace App\Filament\Widgets;
 
-use App\Models\Avocat;
-use App\Models\Publication;
-use App\Models\Expertise;
-use App\Models\Category;
-use App\Models\Bureau;
+use App\Models\avocat;
+use App\Models\publication;
+use App\Models\expertise;
+// use App\Models\Category;
+use App\Models\bureau;
 use App\Models\categorie;
 use App\Models\User;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
@@ -28,27 +28,27 @@ class SiteStatsOverview extends BaseWidget
         $prevEnd   = $start;
 
         // Totaux
-        $totalAvocats      = Avocat::count();
-        $totalPublications = Publication::count();
-        $totalExpertises   = Expertise::count();
+        $totalAvocats      = avocat::count();
+        $totalPublications = publication::count();
+        $totalExpertises   = expertise::count();
         $totalCategories   = categorie::count();
-        $totalBureaux      = Bureau::count();
+        $totalBureaux      = bureau::count();
         $totalUsers        = User::count();
 
         // Nouveaux sur 30 jours
-        $newAvocats      = Avocat::where('created_at', '>=', $start)->count();
-        $newPublications = Publication::where('created_at', '>=', $start)->count();
-        $newExpertises   = Expertise::where('created_at', '>=', $start)->count();
-        $newCategories   = Categorie::where('created_at', '>=', $start)->count();
-        $newBureaux      = Bureau::where('created_at', '>=', $start)->count();
+        $newAvocats      = avocat::where('created_at', '>=', $start)->count();
+        $newPublications = publication::where('created_at', '>=', $start)->count();
+        $newExpertises   = expertise::where('created_at', '>=', $start)->count();
+        $newCategories   = categorie::where('created_at', '>=', $start)->count();
+        $newBureaux      = bureau::where('created_at', '>=', $start)->count();
         $newUsers        = User::where('created_at', '>=', $start)->count();
 
         // Période précédente (pour %)
-        $prevAvocats      = Avocat::whereBetween('created_at', [$prevStart, $prevEnd])->count();
-        $prevPublications = Publication::whereBetween('created_at', [$prevStart, $prevEnd])->count();
-        $prevExpertises   = Expertise::whereBetween('created_at', [$prevStart, $prevEnd])->count();
-        $prevCategories   = Categorie::whereBetween('created_at', [$prevStart, $prevEnd])->count();
-        $prevBureaux      = Bureau::whereBetween('created_at', [$prevStart, $prevEnd])->count();
+        $prevAvocats      = avocat::whereBetween('created_at', [$prevStart, $prevEnd])->count();
+        $prevPublications = publication::whereBetween('created_at', [$prevStart, $prevEnd])->count();
+        $prevExpertises   = expertise::whereBetween('created_at', [$prevStart, $prevEnd])->count();
+        $prevCategories   = categorie::whereBetween('created_at', [$prevStart, $prevEnd])->count();
+        $prevBureaux      = bureau::whereBetween('created_at', [$prevStart, $prevEnd])->count();
         $prevUsers        = User::whereBetween('created_at', [$prevStart, $prevEnd])->count();
 
         $trend = function (int $current, int $previous): array {

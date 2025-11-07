@@ -3,7 +3,7 @@
 namespace App\Filament\Widgets;
 
 use App\Models\categorie;
-use App\Models\Category;
+// use App\Models\Category;
 use Filament\Widgets\ChartWidget;
 use Illuminate\Contracts\Support\Htmlable;
 class PublicationsByCategoryPie extends ChartWidget

@@ -3,7 +3,7 @@
 namespace App\Filament\Widgets;
 
 use Carbon\Carbon;
-use App\Models\Publication;
+use App\Models\publication;
 use Filament\Widgets\ChartWidget;
 use Illuminate\Contracts\Support\Htmlable;
 
@@ -17,7 +17,7 @@ public function getHeading(): string
     {
         $start = now()->copy()->subMonths(11)->startOfMonth();
 
-        $raw = Publication::query()
+        $raw = publication::query()
             ->where('created_at', '>=', $start)
             ->selectRaw('DATE_FORMAT(created_at, "%Y-%m") as ym, COUNT(*) as total')
             ->groupBy('ym')

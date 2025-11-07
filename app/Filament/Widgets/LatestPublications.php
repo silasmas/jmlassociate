@@ -2,7 +2,7 @@
 
 namespace App\Filament\Widgets;
 
-use App\Models\Publication;
+use App\Models\publication;
 use Filament\Widgets\TableWidget;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -19,7 +19,7 @@ class LatestPublications extends TableWidget
     {
         return $table
             ->query(
-                Publication::query()
+                publication::query()
                     ->with(['categorie', 'avocat'])
                     ->latest()
             )
