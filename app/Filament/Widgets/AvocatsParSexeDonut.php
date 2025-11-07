@@ -2,7 +2,7 @@
 
 namespace App\Filament\Widgets;
 
-use App\Models\Avocat;
+use App\Models\avocat;
 use Filament\Widgets\ChartWidget;
 use Illuminate\Contracts\Support\Htmlable;
 class AvocatsParSexeDonut extends ChartWidget
@@ -13,8 +13,8 @@ public function getHeading(): string
 }
     protected function getData(): array
     {
-        $m = Avocat::where('sexe', 'M')->count();
-        $f = Avocat::where('sexe', 'F')->count();
+        $m = avocat::where('sexe', 'M')->count();
+        $f = avocat::where('sexe', 'F')->count();
 
         return [
             'labels' => ['Masculin', 'Féminin'],
