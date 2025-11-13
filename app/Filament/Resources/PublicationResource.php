@@ -4,8 +4,8 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\PublicationResource\Pages;
 use App\Models\Publication;
-use App\Models\Avocat;
-use App\Models\Category;
+use App\Models\avocat;
+use App\Models\categorie;
 use App\Models\User;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -44,13 +44,13 @@ class PublicationResource extends Resource
                         ->searchable()
                         ->preload()
                         ->required(),
-
+ 
                     Forms\Components\Select::make('avocat_id')
                         ->label('Avocat')
                         ->relationship('avocat', 'id') // on calcule le libellé
                         ->searchable()
                         ->preload()
-                        ->getOptionLabelFromRecordUsing(fn (Avocat $a) => "{$a->prenom} {$a->nom}")
+                        ->getOptionLabelFromRecordUsing(fn (avocat $a) => "{$a->prenom} {$a->nom}")
                         ->required(),
 
                     Forms\Components\Select::make('categorie_id')
@@ -58,7 +58,7 @@ class PublicationResource extends Resource
                         ->relationship('categorie', 'id')
                         ->searchable()
                         ->preload()
-                        ->getOptionLabelFromRecordUsing(fn (Category $c) => $c->getTranslation('nom', app()->getLocale()))
+                        ->getOptionLabelFromRecordUsing(fn (categorie $c) => $c->getTranslation('nom', app()->getLocale()))
                         ->required(),
 
                     Forms\Components\FileUpload::make('cover')

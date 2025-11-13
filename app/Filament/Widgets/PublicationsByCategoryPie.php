@@ -8,7 +8,7 @@ use Filament\Widgets\ChartWidget;
 use Illuminate\Contracts\Support\Htmlable;
 class PublicationsByCategoryPie extends ChartWidget
 {
-    
+
 public function getHeading(): string
 {
     return 'Publications par catégorie';

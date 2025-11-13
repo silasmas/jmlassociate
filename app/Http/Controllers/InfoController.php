@@ -69,22 +69,32 @@ class InfoController extends Controller
         $categorie = categorie::with('publication')->get();
         $accueil = accueil::first();
         $publication = publication::with(['avocat', 'categorie'])->get();
+        // Eager load + counts pour éviter N+1
+    $publications = Publication::query()
+        ->published()                         // scope local (ex: where status = 'published')
+        ->with(['categorie:id,nom', 'avocat:id,nom,prenom,photo'])
+        // ->withCount('comments')               // ->comments_count
+        ->latest('created_at')              // ou created_at
+        ->paginate(9);
+// dd($publications);
+    // Pour la locale FR des dates (si pas déjà fait dans AppServiceProvider)
+    app()->setLocale('fr');
         // dd($publication);
         $secteur = expertise::where('sorte', 1)
             ->orderBy('expertises.created_at', 'asc')->get();
         $domaine = expertise::where('sorte', 2)
             ->orderBy('expertises.created_at', 'asc')->get();
         $titres = ["Notre Blog", "home", "Nos publications"];
-        return view('pages.blog', compact('titres', 'publication', 'avocat', 'categorie', 'accueil', 'secteur', 'domaine'));
+        return view('pages.blog', compact('titres', 'publications', 'avocat', 'categorie', 'accueil', 'secteur', 'domaine'));
     }
     public function contact()
     {
          $titres = ["Nous contacter", "home", "Contact"];
         return view('pages.contact',compact('titres'));
     }
-    public function show_pub()
+    public function show_pub($id)
     {
-        $pub = publication::with(['avocat', 'categorie'])->findOrFail($_GET['id']);
+        $pub = publication::with(['avocat', 'categorie'])->findOrFail($id);
         $accueil = accueil::first();
         // $type=type::all();
         $publication = publication::simplePaginate(2);
