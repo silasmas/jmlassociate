@@ -334,7 +334,7 @@
                 <div class="col-sm-6 col-md-3">
                     <div class="h-2-p-c-details">
                         <div class="h-2-p-c-default h-3-p-c-default">
-                            <img src="{{ asset('assets/'.$a->photo) }}" class="img-responsive"
+                            <img src="{{file_exists('storage/'.$a->photo)?asset("storage/".$a->photo):asset('img/def.jpeg') }}" class="img-responsive"
                                 alt="">
                             <h2><a href="#">{{ $a->titre1 }}</a></h2>
                             {!! $firstParagraphHtml!!}

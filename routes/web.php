@@ -15,6 +15,10 @@ use App\Http\Controllers\SlidesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 
+
+Route::get('/symlink', action: function () {
+    return view('symlink');
+})->name('generate_symlink');
 // Route::group(
 //     [
 //         'prefix' => LaravelLocalization::setLocale(),
