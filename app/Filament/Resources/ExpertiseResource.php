@@ -42,7 +42,7 @@ class ExpertiseResource extends Resource
                         ->columnSpan(12),
                     Forms\Components\FileUpload::make('photo')
                         ->label('Image')
-                        ->image()->directory('expertises')->disk('public')->imageEditor(),
+                        ->image()->directory('expertise')->disk('public')->imageEditor(),
                     Forms\Components\FileUpload::make('pdf')
                         ->label('PDF')
                         ->acceptedFileTypes(['application/pdf'])
