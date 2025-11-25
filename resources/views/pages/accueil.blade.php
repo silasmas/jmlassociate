@@ -337,7 +337,7 @@
                             <img src="{{file_exists('storage/'.$a->photo)?asset("storage/".$a->photo):asset('img/def.jpeg') }}" class="img-responsive"
                                 alt="">
                             <h2><a href="#">{{ $a->titre1 }}</a></h2>
-                            {!! $firstParagraphHtml!!}
+                            {{-- {!! $firstParagraphHtml!!} --}}
                             <a href="{{route('detailExpertise',['id'=>$a->id])}}">Voire en details <i
                                     class="fa fa-long-arrow-right"></i></a>
                         </div>

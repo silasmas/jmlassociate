@@ -29,7 +29,7 @@
                         <div class="h-2-p-c-default h-3-p-c-default">
                             <img src="{{file_exists('storage/'.$s->photo)?asset("storage/".$s->photo):asset('img/def.jpeg') }}" class="img-responsive" alt="">
                             <h2><a href="{{ route('detailExpertise',['id'=>$s->id]) }}">{{ $s->titre1 }}</a></h2>
-                            <p>{!! Str::limit($s->contenu, 100, '...')  !!}</p>
+                            {{-- <p>{!! Str::limit($s->contenu, 100, '...')  !!}</p> --}}
                             <a href="{{ route('detailExpertise',['id'=>$s->id]) }}">Voir en detail<i class="fa fa-long-arrow-right"></i></a>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
                         <div class="h-2-p-c-default h-3-p-c-default">
                             <img src="{{file_exists('storage/'.$s->photo)?asset("storage/".$s->photo):asset('img/def.jpeg') }}" class="img-responsive" alt="">
                             <h2><a href="{{ route('detailCompetence',['id'=>$s->id]) }}">{{ $s->titre1 }}</a></h2>
-                            {!! $firstParagraphHtml!!}
+                            {{-- {!! $firstParagraphHtml!!} --}}
                             <a href="{{ route('detailCompetence',['id'=>$s->id]) }}">Voir en detail<i class="fa fa-long-arrow-right"></i></a>
                         </div>
                     </div>
